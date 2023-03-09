@@ -53,15 +53,20 @@ function countriesMarkup(countries) {
   return (countriesList.innerHTML = listMarkup);
 }
 function countryInfoMarkup(country) {
-  const languagesKey = Object.entries(country.languages).map(item => item[0]);
-
+  const languagesValue = [];
+  Object.entries(country.languages).forEach(([key, value]) =>
+    languagesValue.push(value)
+  );
+  console.log(languagesValue);
   const markup = ` <div class="wrapper">
-    <img src="${country.flags.svg}" alt="${country.name.official}" width="30" height="30" />
+    <img src="${country.flags.svg}" alt="${
+    country.name.official
+  }" width="30" height="30" />
     <h2>${country.name.official}</h2>
   </div><ul>
   <li><h3>Capital:</h3><p>${country.capital}</p></li>
   <li><h3>Population:</h3><p>${country.population}</p></li>
-  <li><h3>Languages</h3><p>${country.languages[languagesKey]}</p></li></ul>`;
+  <li><h3>Languages</h3><p>${languagesValue.join(', ')}</p></li></ul>`;
 
   return (countryInfo.innerHTML = markup);
 }
