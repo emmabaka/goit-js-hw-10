@@ -66,7 +66,7 @@ function countryInfoMarkup(country) {
   </div><ul>
   <li><h3>Capital:</h3><p>${country.capital}</p></li>
   <li><h3>Population:</h3><p>${country.population}</p></li>
-  <li><h3>Languages</h3><p>${languagesValue.join(', ')}</p></li></ul>`;
+  <li><h3>Languages:</h3><p>${languagesValue.join(', ')}</p></li></ul>`;
 
   return (countryInfo.innerHTML = markup);
 }
