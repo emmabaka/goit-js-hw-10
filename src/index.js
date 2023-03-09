@@ -53,7 +53,8 @@ function countriesMarkup(countries) {
   return (countriesList.innerHTML = listMarkup);
 }
 function countryInfoMarkup(country) {
-  const languagesKey = country.name.official.slice(0, 3).toLowerCase();
+  const languagesKey = Object.entries(country.languages).map(item => item[0]);
+
   const markup = ` <div class="wrapper">
     <img src="${country.flags.svg}" alt="${country.name.official}" width="30" height="30" />
     <h2>${country.name.official}</h2>
