@@ -13,6 +13,8 @@ searchInput.addEventListener('input', debounce(searchCountry, DEBOUNCE_DELAY));
 function searchCountry() {
   const inputValue = searchInput.value.trim();
   if (!inputValue || inputValue === '') {
+    countryInfo.innerHTML = '';
+    countriesList.innerHTML = '';
     return;
   }
   fetchCountries(inputValue)
